@@ -1,0 +1,17 @@
+package br.com.eiconTeste.clientesapi;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+/**
+ * @author RodolfoCosta
+ *
+ */
+@SpringBootApplication
+public class ClientesapiApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(ClientesapiApplication.class, args);
+	}
+
+}
