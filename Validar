@@ -1,0 +1,26 @@
+package br.com.eiconTeste.clientesapi;
+
+public class Validar extends Exception {
+
+	/*
+	 * Nesse ponto, fiquei com dúvida de como criar a "regra de negócio"
+	 */
+
+	List<String> clientes = new ArrayList<>();
+
+	if(!/* condição de validação do codigo de controle */)
+	{
+		lista.add("Código Existente");
+	}
+
+	throw new Exception(msg.toString());
+}
+
+/*
+ * O sistema deve calcular e gravar o valor total do pedido. Criar um serviço
+ * onde possa consultar os pedidos enviados pelos clientes. Critérios aceitação:
+ * O retorno deve trazer todos os dados do pedido. filtros da consulta: número
+ * controle, data cadastro, cliente, todos .
+ */
+
+}
