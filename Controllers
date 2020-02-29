@@ -16,38 +16,34 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import br.com.eiconTeste.clientesapi.repository.ClienteRepository;
 
-
 @RestController
 @RequestMapping("/clientes")
 public class Controllers {
-	
-		@Autowired
-		ClienteRepository clienteRepo;
-		
-		@PostMapping(consumes = "application/json")
-		public ResponseEntity<?> adicionaCliente(@RequestBody Cliente cliente){
-	
+
+	@Autowired
+	ClienteRepository clienteRepo;
+
+	@PostMapping(consumes = "application/json")
+	public ResponseEntity<?> adicionaCliente(@RequestBody Cliente cliente) {
+
 		Cliente clienteSalvo = clienteRepo.save(cliente);
-		
+
 		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().replacePath("/clientes").path("/{codigoCliente}")
 				.buildAndExpand(clienteSalvo.getID()).toUri();
-			
-		
+
 		return ResponseEntity.created(uri).build();
-					
-		}
-	
-		
-		@GetMapping
-		public ResponseEntity<List<Cliente>> listaClientes(){
-					return ResponseEntity.ok().body(clienteRepo.findAll());				
-		}
-		
-		
-		@GetMapping("/{codigoCliente}")
-		public ResponseEntity<Clinte> buscaPorId(@PathVariable Long contatoCliente){
-			return ResponseEntity.ok().body(clienteRepo.findById(contatoCliente).get());
-			
-		}
-		
-		}
+
+	}
+
+	@GetMapping
+	public ResponseEntity<List<Cliente>> listaClientes() {
+		return ResponseEntity.ok().body(clienteRepo.findAll());
+	}
+
+	@GetMapping("/{codigoCliente}")
+	public ResponseEntity<Clinte> buscaPorId(@PathVariable Long contatoCliente) {
+		return ResponseEntity.ok().body(clienteRepo.findById(contatoCliente).get());
+
+	}
+
+}
