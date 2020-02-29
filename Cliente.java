@@ -8,11 +8,10 @@ import lombok.Data;
 @Table
 @Data
 public class Cliente {
-		
+
 	private Long codigoCliente;
-	private Long numeroControle;	
+	private Long numeroControle;
 	private String nomeProduto;
 	private Long valorUnitario;
-	
-	
+
 }
