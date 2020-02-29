@@ -1,0 +1,6 @@
+# H2
+spring.h2.console.enabled=true
+spring.h2.console.path=/h2
+
+#Datasource
+spring.datasource.url=:h2:file:/home/rodolfoclacerda/dbh2
